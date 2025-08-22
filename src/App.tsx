@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { useFetchCharacters } from "./hooks/useFetchCharacters";
+import CharacterCard from "./components/CharacterCard";
+
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [searchTerm, setSearchTerm] = useState("");
+  const { characters, loading } = useFetchCharacters(searchTerm);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div style={{ padding: "16px" }}>
+      <h1>Marvel Characters</h1>
+      <input
+        type="text"
+        placeholder="Search character..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        style={{ marginBottom: "16px", padding: "8px", width: "300px" }}
+      />
+
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div style={{ display: "flex", flexWrap: "wrap" }}>
+          {characters.map((char) => (
+            <CharacterCard key={char.id} character={char} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;
