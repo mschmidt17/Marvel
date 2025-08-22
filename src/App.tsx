@@ -3,7 +3,7 @@ import { useFetchCharacters } from "./hooks/useFetchCharacters";
 
 import "./App.css";
 import CharacterCard from "./components/CharacterCard";
-
+import Header from "./components/Header";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -11,7 +11,8 @@ function App() {
 
   return (
     <div style={{ padding: "16px" }}>
-      <h1>Marvel Characters</h1>
+      <Header />
+
       <input
         type="text"
         placeholder="Search character..."
