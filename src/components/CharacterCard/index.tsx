@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import type { Character } from "../../../api/marvelApi";
 import { Card, Thumbnail, FavoriteIcon } from "./CharacterCard.styled";
 import heartFilled from "@/assets/heart_filled.svg";
 import heartOutlined from "@/assets/heart_outlined.svg";
-import { FavoriteCharactersContext } from "../../../store";
+
+import type { Character } from "../../api/marvelApi";
+import { FavoriteCharactersContext } from "../../store";
 
 interface Props {
   character: Character;
