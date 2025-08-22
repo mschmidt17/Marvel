@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useFetchCharacters } from "./hooks/useFetchCharacters";
-import CharacterCard from "./components/CharacterCard";
 
 import "./App.css";
+import CharacterCard from "./components/card/CharacterCard";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");

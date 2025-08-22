@@ -1,6 +1,7 @@
-import { createContext, useState, type FC, type PropsWithChildren } from 'react';
-import type { FavoriteCharactersContextProps } from './FavoriteCharactersContext.types';
+import  { createContext, useState, type FC, type PropsWithChildren } from 'react';
+
 import type { Character } from '../../api/marvelApi';
+import type { FavoriteCharactersContextProps } from './FavoriteCharactersContext.types';
 
 export const FavoriteCharactersContext = createContext<FavoriteCharactersContextProps | undefined>(undefined);
 
