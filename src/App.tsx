@@ -1,36 +1,38 @@
 import { useState } from "react";
 import { useFetchCharacters } from "./hooks/useFetchCharacters";
 
-import "./App.css";
 import CharacterCard from "./components/CharacterCard";
 import Header from "./components/Header";
+import SearchBar from "./components/SearchBar";
+
+import { AppContainer, CardsContainer, MainContent } from "./App.styled";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const { characters, loading } = useFetchCharacters(searchTerm);
 
   return (
-    <div style={{ padding: "16px" }}>
+    <AppContainer>
       <Header />
 
-      <input
-        type="text"
-        placeholder="Search character..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        style={{ marginBottom: "16px", padding: "8px", width: "300px" }}
-      />
+      <MainContent>
+        <SearchBar
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          resultsCount={characters.length}
+        />
 
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
-          {characters.map((char) => (
-            <CharacterCard key={char.id} character={char} />
-          ))}
-        </div>
-      )}
-    </div>
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <CardsContainer>
+            {characters.map((char) => (
+              <CharacterCard key={char.id} character={char} />
+            ))}
+          </CardsContainer>
+        )}
+      </MainContent>
+    </AppContainer>
   );
 }
 

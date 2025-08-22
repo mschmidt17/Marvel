@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
-import { Card, Thumbnail, FavoriteIcon } from "./CharacterCard.styled";
+import { Card, Thumbnail, Footer, FavoriteIcon, CharacterName, RedDivider, CardWrapper } from "./CharacterCard.styled";
 import heartFilled from "@/assets/heart_filled.svg";
 import heartOutlined from "@/assets/heart_outlined.svg";
-
 import type { Character } from "../../api/marvelApi";
 import { FavoriteCharactersContext } from "../../store";
 
@@ -21,18 +20,20 @@ const CharacterCard: React.FC<Props> = ({ character }) => {
   const favorite = isFavorite(character.id);
 
   return (
-    <Card>
-      <Thumbnail
-        src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-        alt={character.name}
-      />
-      <h3>{character.name}</h3>
-      <FavoriteIcon
-        src={favorite ? heartFilled : heartOutlined}
-        alt={favorite ? "Favorito" : "No favorito"}
-        onClick={() => toggleFavorite(character)}
-      />
-    </Card>
+    <CardWrapper>
+      <Card>
+        <Thumbnail src={`${character.thumbnail.path}.${character.thumbnail.extension}`} alt={character.name} />
+        <Footer>
+          <RedDivider />
+          <CharacterName>{character.name}</CharacterName>
+          <FavoriteIcon
+            src={favorite ? heartFilled : heartOutlined}
+            alt={favorite ? "Favorito" : "No favorito"}
+            onClick={() => toggleFavorite(character)}
+          />
+        </Footer>
+      </Card>
+    </CardWrapper>
   );
 };
 

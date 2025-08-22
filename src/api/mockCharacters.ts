@@ -1,4 +1,3 @@
-// src/api/mockCharacters.ts
 export const mockCharacters = [
   {
     id: 1,
