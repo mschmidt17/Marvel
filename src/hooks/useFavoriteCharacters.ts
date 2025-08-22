@@ -1,6 +1,7 @@
 import { useContext, useMemo } from "react";
-import type { Character } from "../../api/marvelApi";
-import { FavoriteCharactersContext } from "./FavoriteCharactersContext";
+import { FavoriteCharactersContext } from "../store";
+import type { Character } from "../api/marvelApi";
+
 
 export const useFavoriteCharacters = (search?: string) => {
   const context = useContext(FavoriteCharactersContext);
