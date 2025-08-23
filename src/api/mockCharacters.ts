@@ -279,24 +279,6 @@ export const mockCharacters = [
     },
   },
   {
-    id: 44,
-    name: "Arsenal",
-    description: "Roy Harper",
-    thumbnail: {
-      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/46-arsenal",
-      extension: "jpg",
-    },
-  },
-  {
-    id: 45,
-    name: "Astro Boy",
-    description: "Atom",
-    thumbnail: {
-      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/47-astro-boy",
-      extension: "jpg",
-    },
-  },
-  {
     id: 46,
     name: "Atlas",
     description: "Atlas",
@@ -306,49 +288,166 @@ export const mockCharacters = [
     },
   },
   {
-    id: 50,
-    name: "Atom III",
-    description: "Adam Cray",
+    id: 236,
+    name: "Elastigirl",
+    description: "Helen Parr - The Incredibles (Dark Horse Comics)",
     thumbnail: {
-      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/52-atom-iii",
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/236-elastigirl",
       extension: "jpg",
     },
   },
   {
-    id: 56,
-    name: "Atom III",
-    description: "Adam Cray",
+    id: 365,
+    name: "JJ Powell",
+    description: "JJ Powell - No Ordinary Family (ABC Studios)",
     thumbnail: {
-      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/52-atom-iii",
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/365-jj-powell",
       extension: "jpg",
     },
   },
   {
-    id: 59,
-    name: "Atom III",
-    description: "Adam Cray",
+    id: 367,
+    name: "John Constantine",
+    description: "John Constantine - Justice League Dark (DC Comics)",
     thumbnail: {
-      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/52-atom-iii",
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/367-john-constantine",
       extension: "jpg",
     },
   },
   {
-    id: 60,
-    name: "Atom III",
-    description: "Adam Cray",
+    id: 370,
+    name: "Joker",
+    description: "Joker - Clown Prince of Crime (DC Comics)",
     thumbnail: {
-      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/52-atom-iii",
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/370-joker",
       extension: "jpg",
     },
   },
-    {
-    id: 86,
-    name: "Atlas",
-    description: "Atlas",
+  {
+    id: 389,
+    name: "King Kong",
+    description: "the 8th Wonder of the World, King of Skull Island",
     thumbnail: {
-      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/48-atlas",
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/389-king-kong",
       extension: "jpg",
     },
   },
+  {
+    id: 390,
+    name: "King Shark",
+    description: "Nanaue",
+    thumbnail: {
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/390-king-shark",
+      extension: "jpg",
+    },
+  },
+  {
+    id: 391,
+    name: "Kingpin",
+    description: "Wilson Grant Fisk",
+    thumbnail: {
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/391-kingpin",
+      extension: "jpg",
+    },
+  },
+  {
+    id: 563,
+    name: "Robin III",
+    description: "Tim Drake",
+    thumbnail: {
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/563-robin-iii",
+      extension: "jpg",
+    },
+  },
+  {
+    id: 564,
+    name: "Robin V",
+    description: "Damian Wayne",
+    thumbnail: {
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/564-robin-v",
+      extension: "jpg",
+    },
+  },
+  {
+    id: 565,
+    name: "Robin VI",
+    description: "Carrie Kelley",
+    thumbnail: {
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/565-robin-vi",
+      extension: "jpg",
+    },
+  },
+  {
+    id: 575,
+    name: "Savage Dragon",
+    description: "Kurr",
+      thumbnail: {
+        path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/575-savage-dragon",
+        extension: "jpg",
+      },
+    },
+  {
+    id: 576,
+    name: "Scarecrow",
+    description: "Jonathan Crane",
+    thumbnail: {
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/576-scarecrow",
+      extension: "jpg",
+    },
+  },
+  {
+    id: 577,
+    name: "Scarlet Spider",
+    description: "Benjamin Reilly",
+    thumbnail: {
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/577-scarlet-spider",
+      extension: "jpg",
+    },
+  },
+  {
+    id: 660,
+    name: "Thor Girl",
+    description: "Tarene",
+    thumbnail: {
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/660-thor-girl",
+      extension: "jpg",
+    },
+  },
+  {
+    id: 661,
+    name: "Thunderbird",
+    description: "John Proudstar",
+    thumbnail: {
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/661-thunderbird",
+      extension: "jpg",
+    },
+  },
+  {
+    id: 664,
+    name: "Thunderstrike",
+    description: "Eric Kevin Masterson",
+    thumbnail: {
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/664-thunderstrike",
+      extension: "jpg",
+    },
+  },
+  {
+    id: 665,
+    name: "Thundra",
+    description: "Thundra",
+    thumbnail: {
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/665-thundra",
+      extension: "jpg",
+    },
+  },
+  {
+    id: 667,
+    name: "Tigra",
+    description: "Greer Grant Nelson", 
+    thumbnail: {
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/667-tigra",
+      extension: "jpg",
+    },
+  }
 ];
 
