@@ -5,7 +5,12 @@ import heartFilled from "@/assets/heart_filled.svg";
 import { FavoriteCharactersContext } from "../../store";
 import { useNavigate } from "react-router-dom";
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  onToggleFavorites?: () => void; 
+  favoritesDisabled?: boolean;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onToggleFavorites,favoritesDisabled }) => {
   const context = useContext(FavoriteCharactersContext);
 
   if (!context) {
@@ -18,8 +23,11 @@ const Navbar: React.FC = () => {
   return (
     <NavbarContainer>
       <Logo src={marvelLogo} alt="Marvel Logo" onClick={() => navigate("/")} />
-      <Favorites onClick={() => navigate("/favorites")} style={{ cursor: "pointer" }}>
-        <img src={heartFilled} alt="Corazones" />
+      <Favorites
+        onClick={() => !favoritesDisabled && onToggleFavorites?.()}
+        disabled={favoritesDisabled}
+      >
+        <img src={heartFilled} alt="Heart" />
         <span>{favorites.length}</span>
       </Favorites>
     </NavbarContainer>

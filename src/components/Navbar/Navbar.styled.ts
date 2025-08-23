@@ -16,13 +16,15 @@ export const Logo = styled.img`
   margin-left: 5%;
 `;
 
-export const Favorites = styled.div`
+export const Favorites = styled.button<{ disabled?: boolean }>`
   display: flex;
   align-items: center;
   color: #fff;
   font-size: 18px;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+  background: none;  
   margin-right: 5%;
+  border:none;
 
   & > img {
     margin-right: 8px;
