@@ -4,7 +4,7 @@ import { getCharacterById, type Character } from "../../api/marvelApi";
 import heartFilled from "@/assets/heart_filled.svg";
 import heartOutlined from "@/assets/heart_outlined.svg";
 import Navbar from "../../components/Navbar";
-import { CharacterImage, CharacterName, Content, Description, FavoriteIcon, Header, Wrapper } from "./CharacterDetail.styled";
+import { CharacterImage, CharacterName, Content, Description, Divider, FavoriteIcon, Header, Wrapper } from "./CharacterDetail.styled";
 import { FavoriteCharactersContext } from "../../store";
 import Loading from "../../components/Loading";
 
@@ -41,25 +41,29 @@ const CharacterDetail = () => {
 
   return (
     <Wrapper>
-      <Navbar />
+      <Navbar/>
+      <Divider/>
       <Content>
         <CharacterImage
           src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
           alt={character.name}
         />
+        <div>
+          <Header>
+            <CharacterName>{character.name.toUpperCase()}</CharacterName>
+            <FavoriteIcon
+              src={favorite ? heartFilled : heartOutlined}
+              alt={favorite ? "Favorito" : "No favorito"}
+              onClick={() => toggleFavorite(character)}
+            />
+          </Header>
 
-        <Header>
-          <CharacterName>{character.name}</CharacterName>
-          <FavoriteIcon
-            src={favorite ? heartFilled : heartOutlined}
-            alt={favorite ? "Favorito" : "No favorito"}
-            onClick={() => toggleFavorite(character)}
-          />
-        </Header>
-
-        <Description>
-          {character.description || "No description available."}
-        </Description>
+          <Description>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+          </Description>
+        </div>
       </Content>
     </Wrapper>
   );

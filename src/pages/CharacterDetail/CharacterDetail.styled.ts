@@ -1,25 +1,35 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background: black;
   min-height: 100vh;
-  color: white;
+  margin: 0;
+`;
+
+export const Divider = styled.div`
+  width: 100%;
+  border-bottom: 0.5px solid rgba(65, 62, 62, 1);
 `;
 
 export const Content = styled.div`
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
+  background: black;
+  color: white;
+  display: flex;
+  align-items:center;
+  width: 100%;
+  justify-content:center;
+  gap: 3%;
 `;
 
 export const CharacterImage = styled.img`
-  width: 100%;
-  border-radius: 12px;
+  width: 400px;
+  aspect-ratio: 1 / 1;
 `;
 
 export const Header = styled.div`
   display: flex;
   align-items: center;
+  width: 700px;
+  justify-content: scpace-between;
   margin-top: 1rem;
 `;
 
@@ -38,4 +48,9 @@ export const FavoriteIcon = styled.img`
 export const Description = styled.p`
   margin-top: 1rem;
   line-height: 1.6;
+  width: 700px; 
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+  text-align: justify;
+}
 `;

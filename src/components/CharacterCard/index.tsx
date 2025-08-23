@@ -33,11 +33,12 @@ const CharacterCard: React.FC<Props> = ({ character }) => {
   };
 
   return (
-    <CardWrapper onClick={handleCardClick}>
+    <CardWrapper>
       <Card>
         <Thumbnail
           src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
           alt={character.name}
+          onClick={handleCardClick}
         />
         <Footer>
           <RedDivider />

@@ -21,3 +21,8 @@ export const MainContent = styled.div`
   margin: 0 auto;       
   padding: 2rem 0;
 `;
+
+export const Title = styled.h1`
+  color: #fff;
+  margin-bottom: 16px;
+`;

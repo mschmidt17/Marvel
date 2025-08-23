@@ -6,13 +6,13 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  cursor: pointer;
 `;
 
 export const Thumbnail = styled.img`
   aspect-ratio: 1 / 1;
   width: 100%;
   object-fit: cover;
+  cursor: pointer;
 `;
 
 export const Footer = styled.div`
@@ -55,4 +55,7 @@ export const CardWrapper = styled.div`
   &:hover ${Footer} ${RedDivider} {
     height: 100%; 
   }
+  &:hover ${FavoriteIcon} {
+    filter: brightness(0) invert(1);
+  }  
 `;
