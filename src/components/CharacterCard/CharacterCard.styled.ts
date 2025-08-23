@@ -9,6 +9,7 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  cursor: pointer;
 `;
 
 export const Thumbnail = styled.img`
