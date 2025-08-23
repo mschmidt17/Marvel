@@ -314,5 +314,41 @@ export const mockCharacters = [
       extension: "jpg",
     },
   },
+  {
+    id: 56,
+    name: "Atom III",
+    description: "Adam Cray",
+    thumbnail: {
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/52-atom-iii",
+      extension: "jpg",
+    },
+  },
+  {
+    id: 59,
+    name: "Atom III",
+    description: "Adam Cray",
+    thumbnail: {
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/52-atom-iii",
+      extension: "jpg",
+    },
+  },
+  {
+    id: 60,
+    name: "Atom III",
+    description: "Adam Cray",
+    thumbnail: {
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/52-atom-iii",
+      extension: "jpg",
+    },
+  },
+    {
+    id: 86,
+    name: "Atlas",
+    description: "Atlas",
+    thumbnail: {
+      path: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/48-atlas",
+      extension: "jpg",
+    },
+  },
 ];
 

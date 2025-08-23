@@ -2,10 +2,7 @@ import styled from "styled-components";
 
 export const Card = styled.div`
   border: 1px solid #ccc;
-  border-radius: 8px;
-  width: 150px;
-  height: 280px;
-  margin: 8px;
+  width: 210px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -13,50 +10,49 @@ export const Card = styled.div`
 `;
 
 export const Thumbnail = styled.img`
-  flex: 1;
+  aspect-ratio: 1 / 1;
   width: 100%;
   object-fit: cover;
 `;
 
 export const Footer = styled.div`
-  position: relative; /* para el divider absoluto */
+  position: relative;
   background-color: #000;
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px;
-  height: 40px;
-  overflow: hidden; /* para que el divider no se salga */
+  padding: 4px 18px;
+  height: 60px;
+  overflow: hidden; 
 `;
 
 export const RedDivider = styled.div`
   position: absolute;
-  top: 0; /* empieza desde la parte superior del footer */
+  top: 0; 
   left: 0;
   width: 100%;
-  height: 4px; /* altura inicial */
+  height: 4px; 
   background-color: red;
   transition: height 0.3s ease;
-  z-index: 0; /* debajo del contenido del footer */
+  z-index: 0; 
 `;
 
 export const CharacterName = styled.span`
-  font-weight: 600;
   font-size: 14px;
   color: #fff;
-  z-index: 1; /* encima del divider */
+  z-index: 1; 
 `;
 
 export const FavoriteIcon = styled.img`
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   cursor: pointer;
-  z-index: 1; /* encima del divider */
+  z-index: 1; 
 `;
 
 export const CardWrapper = styled.div`
   &:hover ${Footer} ${RedDivider} {
-    height: 100%; /* cubre todo el footer sin tocar la imagen */
+    height: 100%; 
   }
 `;

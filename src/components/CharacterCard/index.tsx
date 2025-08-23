@@ -28,7 +28,7 @@ const CharacterCard: React.FC<Props> = ({ character }) => {
   const handleFavoriteClick = (
     e: React.MouseEvent<HTMLImageElement, MouseEvent>
   ) => {
-    e.stopPropagation(); // 👈 evita que se dispare la navegación
+    e.stopPropagation(); 
     toggleFavorite(character);
   };
 
@@ -41,7 +41,7 @@ const CharacterCard: React.FC<Props> = ({ character }) => {
         />
         <Footer>
           <RedDivider />
-          <CharacterName>{character.name}</CharacterName>
+          <CharacterName>{character.name.toUpperCase()}</CharacterName>
           <FavoriteIcon
             src={favorite ? heartFilled : heartOutlined}
             alt={favorite ? "Favorito" : "No favorito"}

@@ -11,7 +11,7 @@ import Loading from "../../components/Loading";
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const { characters, loading } = useFetchCharacters(searchTerm);
-
+  
   return (
     <Container>
       <Navbar />
