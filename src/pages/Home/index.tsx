@@ -1,5 +1,6 @@
 import Navbar from "../../components/Navbar";
 import SearchBar from "../../components/SearchBar";
+import { useLocation } from "react-router-dom";
 import CharacterCard from "../../components/CharacterCard";
 import { CardsContainer, Container, MainContent, Title } from "./Home.styled";
 import EmptyState from "../../components/EmptyState";
@@ -11,8 +12,10 @@ import type { Character } from "../../api/mockCharacters";
 
 
 const Home = () => {
+  const location = useLocation();
+  const showFavoritesFromState = location.state?.showFavorites ?? false;
+  const [showFavorites, setShowFavorites] = useState(showFavoritesFromState);
   const [searchTerm, setSearchTerm] = useState("");
-  const [showFavorites, setShowFavorites] = useState(false);
   const { characters, loading } = useFetchCharacters(searchTerm);
 
   const context = useContext(FavoriteCharactersContext);

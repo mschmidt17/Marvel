@@ -33,7 +33,7 @@ export const RedDivider = styled.div`
   left: 0;
   width: 100%;
   height: 4px; 
-  background-color: red;
+  background-color: #EC1D24;
   transition: height 0.3s ease;
   z-index: 0; 
 `;

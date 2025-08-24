@@ -14,6 +14,9 @@ const slideDown = keyframes`
 export const Wrapper = styled.div`
   min-height: 100vh;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Divider = styled.div`
@@ -29,7 +32,7 @@ export const Content = styled.div`
   width: 100%;
   justify-content:center;
   gap: 3%;
-  animation: ${slideDown} 0.3s ease-out forwards;
+  animation: ${slideDown} 0.4s ease-out forwards;
 
 `;
 
@@ -65,5 +68,19 @@ export const Description = styled.p`
   word-wrap: break-word; 
   overflow-wrap: break-word;
   text-align: justify;
+}
+`;
+
+export const ComicsContainer = styled.div`
+  display: flex;
+  flex-direction:column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 63%;
+  margin: 2% 0 6% 0;
+  border-bottom: 5px solid transparent; 
+  border-image: linear-gradient(to right, #EC1D24 24%, #D9D9D9 0) 1;
+  animation: ${slideDown} 0.4s ease-out forwards;
+
 }
 `;

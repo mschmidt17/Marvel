@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const Progress = styled.div`
   height: 100%;
-  background-color: red; 
+  background-color: #EC1D24; 
   width: 0%;
   transition: width 0.1s linear; 
 `;

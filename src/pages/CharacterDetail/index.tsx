@@ -4,10 +4,12 @@ import { getCharacterById, type Character } from "../../api/marvelApi";
 import heartFilled from "@/assets/icon/heart_filled.svg";
 import heartOutlined from "@/assets/icon/heart_outlined.svg";
 import Navbar from "../../components/Navbar";
-import { CharacterImage, CharacterName, Content, Description, Divider, FavoriteIcon, Header, Wrapper } from "./CharacterDetail.styled";
+import { CharacterImage, CharacterName, ComicsContainer, Content, Description, Divider, FavoriteIcon, Header, Wrapper } from "./CharacterDetail.styled";
 import { FavoriteCharactersContext } from "../../store";
 import Loading from "../../components/Loading";
 import { useFetchComics } from "../../hooks/useFetchComics";
+import RelatedComics from "../../components/RelatedComics";
+import { Title } from "../Home/Home.styled";
 
 const CharacterDetail = () => {
   const { id } = useParams();
@@ -42,10 +44,12 @@ const CharacterDetail = () => {
   if (!character) return <p style={{ color: "white" }}>Character not found.</p>;
 
   const favorite = isFavorite(character.id);
+  const { favorites } = context;
+
 
   return (
     <Wrapper>
-      <Navbar/>
+      <Navbar navigateToHome={true} favoritesDisabled={favorites.length > 0 ? false : true}/>
       <Divider/>
       <Content>
         <CharacterImage
@@ -69,15 +73,10 @@ const CharacterDetail = () => {
           </Description>
         </div>
       </Content>
-      <div>
-          {relatedComics.map((comic) => (
-            <div key={comic.id}>
-              <img src={comic.thumbnail} alt={comic.title} />
-              <p>{comic.title}</p>
-              <p>{comic.year}</p>
-            </div>
-          ))}
-      </div>
+      <ComicsContainer>
+        <Title>COMICS</Title>
+        <RelatedComics comics={relatedComics}/>
+      </ComicsContainer>
     </Wrapper>
   );
 };

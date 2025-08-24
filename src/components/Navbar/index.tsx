@@ -10,6 +10,7 @@ interface NavbarProps {
   onShowAll?: () => void; 
   favoritesDisabled?: boolean;
   isShowingFavorites?: boolean;
+  navigateToHome?: boolean; 
 }
 
 const Navbar = ({
@@ -17,6 +18,7 @@ const Navbar = ({
   onShowAll,
   favoritesDisabled = false,
   isShowingFavorites = false,
+  navigateToHome = false,
 }: NavbarProps) => {
   const context = useContext(FavoriteCharactersContext);
   if (!context) {
@@ -33,6 +35,9 @@ const Navbar = ({
 
   const handleFavoritesClick = () => {
     if (!favoritesDisabled && !isShowingFavorites) {
+      if (navigateToHome) {
+        navigate("/", { state: { showFavorites: true } });
+      }
       onToggleFavorites?.();
     }
   };
