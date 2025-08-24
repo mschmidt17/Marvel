@@ -1,17 +1,21 @@
 import { useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { getCharacterById, type Character } from "../../api/marvelApi";
-import heartFilled from "@/assets/heart_filled.svg";
-import heartOutlined from "@/assets/heart_outlined.svg";
+import heartFilled from "@/assets/icon/heart_filled.svg";
+import heartOutlined from "@/assets/icon/heart_outlined.svg";
 import Navbar from "../../components/Navbar";
 import { CharacterImage, CharacterName, Content, Description, Divider, FavoriteIcon, Header, Wrapper } from "./CharacterDetail.styled";
 import { FavoriteCharactersContext } from "../../store";
 import Loading from "../../components/Loading";
+import { useFetchComics } from "../../hooks/useFetchComics";
 
 const CharacterDetail = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState<Character | null>(null);
   const [loading, setLoading] = useState(true);
+  const characterId = character?.id;
+ const { comics: relatedComics } = useFetchComics(characterId || 0);
+
 
   const context = useContext(FavoriteCharactersContext);
   if (!context) {
@@ -65,6 +69,15 @@ const CharacterDetail = () => {
           </Description>
         </div>
       </Content>
+      <div>
+          {relatedComics.map((comic) => (
+            <div key={comic.id}>
+              <img src={comic.thumbnail} alt={comic.title} />
+              <p>{comic.title}</p>
+              <p>{comic.year}</p>
+            </div>
+          ))}
+      </div>
     </Wrapper>
   );
 };

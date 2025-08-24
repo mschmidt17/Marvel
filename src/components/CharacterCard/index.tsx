@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Card, Thumbnail, Footer, FavoriteIcon, CharacterName, RedDivider, CardWrapper } from "./CharacterCard.styled";
-import heartFilled from "@/assets/heart_filled.svg";
-import heartOutlined from "@/assets/heart_outlined.svg";
+import heartFilled from "@/assets/icon/heart_filled.svg";
+import heartOutlined from "@/assets/icon/heart_outlined.svg";
 import type { Character } from "../../api/marvelApi";
 import { FavoriteCharactersContext } from "../../store";
 import { useNavigate } from "react-router-dom";

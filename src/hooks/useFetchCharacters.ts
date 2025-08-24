@@ -9,12 +9,12 @@ export const useFetchCharacters = (searchTerm: string = "") => {
   useEffect(() => {
     const fetchCharacters = async () => {
       setLoading(true);
-      const data = await getCharacters(50);
+      const data = await getCharacters(50, searchTerm); 
       setAllCharacters(data);
       setLoading(false);
     };
     fetchCharacters();
-  }, []);
+  }, [searchTerm]);
 
   // Filtrado en tiempo real según el searchTerm
   const characters = useMemo(

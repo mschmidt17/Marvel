@@ -1,4 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const slideDown = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export const Wrapper = styled.div`
   min-height: 100vh;
@@ -18,6 +29,8 @@ export const Content = styled.div`
   width: 100%;
   justify-content:center;
   gap: 3%;
+  animation: ${slideDown} 0.3s ease-out forwards;
+
 `;
 
 export const CharacterImage = styled.img`

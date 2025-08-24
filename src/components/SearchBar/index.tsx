@@ -1,7 +1,7 @@
 import React from "react";
 import type { ChangeEvent } from "react";
 import { Container, InputWrapper, Icon, Input, ResultsText } from "./SearchBar.styled";
-import searchIcon from "@/assets/search.svg";
+import searchIcon from "@/assets/icon/search.svg";
 
 interface SearchBarProps {
   value: string;

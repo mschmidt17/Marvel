@@ -31,10 +31,15 @@ const Home = () => {
   return (
     <Container>
       <Navbar
-        onToggleFavorites={() => setShowFavorites(prev => !prev)}
+        onToggleFavorites={() => setShowFavorites(true)}
+        onShowAll={() => {
+          setShowFavorites(false);
+          setSearchTerm(""); 
+        }}
         favoritesDisabled={favorites.length === 0}
+        isShowingFavorites={showFavorites}
       />
-      <MainContent>
+      <MainContent show={showFavorites}>
         {showFavorites ? <Title>FAVORITES</Title> : null }
         <SearchBar
           value={searchTerm}
