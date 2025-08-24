@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
+import Loading from "./components/Loading";
 
 // Lazy loading de las páginas para mejorar performance inicial
 const Home = lazy(() => import("./pages/Home"));
@@ -9,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
      {/* Suspense muestra un fallback mientras las páginas se cargan */}
-      <Suspense fallback={<div>Loading...</div>}>
+     <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/character/:id" element={<CharacterDetail />} />

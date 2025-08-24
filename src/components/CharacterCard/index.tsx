@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { memo, useContext } from "react";
 import { Card, Thumbnail, Footer, FavoriteIcon, CharacterName, RedDivider, CardWrapper } from "./CharacterCard.styled";
 import heartFilled from "@/assets/icon/heart_filled.svg";
 import heartOutlined from "@/assets/icon/heart_outlined.svg";
@@ -10,9 +10,8 @@ interface Props {
   character: Character;
 }
 
-const CharacterCard: React.FC<Props> = ({ character }) => {
+const CharacterCard = ({ character }: Props) => {
   const context = useContext(FavoriteCharactersContext);
-
   if (!context) {
     throw new Error("CharacterCard must be used within FavoriteCharactersProvider");
   }
@@ -25,10 +24,8 @@ const CharacterCard: React.FC<Props> = ({ character }) => {
     navigate(`/character/${character.id}`);
   };
 
-  const handleFavoriteClick = (
-    e: React.MouseEvent<HTMLImageElement, MouseEvent>
-  ) => {
-    e.stopPropagation(); 
+  const handleFavoriteClick = (e: React.MouseEvent<HTMLImageElement>) => {
+    e.stopPropagation();
     toggleFavorite(character);
   };
 
@@ -39,14 +36,18 @@ const CharacterCard: React.FC<Props> = ({ character }) => {
           src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
           alt={character.name}
           onClick={handleCardClick}
+          role="button"
+          tabIndex={0}
         />
         <Footer>
           <RedDivider />
-          <CharacterName>{character.name.toUpperCase()}</CharacterName>
+          <CharacterName>{character.name?.toUpperCase() || "SIN NOMBRE"}</CharacterName>
           <FavoriteIcon
             src={favorite ? heartFilled : heartOutlined}
             alt={favorite ? "Favorito" : "No favorito"}
             onClick={handleFavoriteClick}
+            role="button"
+            tabIndex={0}
           />
         </Footer>
       </Card>
@@ -54,4 +55,4 @@ const CharacterCard: React.FC<Props> = ({ character }) => {
   );
 };
 
-export default CharacterCard;
+export default memo(CharacterCard);

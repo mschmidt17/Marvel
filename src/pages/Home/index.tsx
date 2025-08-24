@@ -1,13 +1,14 @@
-import { useContext, useMemo, useState } from "react";
-
 import Navbar from "../../components/Navbar";
 import SearchBar from "../../components/SearchBar";
 import CharacterCard from "../../components/CharacterCard";
 import { CardsContainer, Container, MainContent, Title } from "./Home.styled";
-import { useFetchCharacters } from "../../hooks/useFetchCharacters";
 import EmptyState from "../../components/EmptyState";
 import Loading from "../../components/Loading";
 import { FavoriteCharactersContext } from "../../store";
+import { useContext, useMemo, useState } from "react";
+import { useFetchCharacters } from "../../hooks/useFetchCharacters";
+import type { Character } from "../../api/mockCharacters";
+
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -22,8 +23,9 @@ const Home = () => {
 
   // Filtrar los personajes a mostrar según search y favoritos
   const displayedCharacters = useMemo(() => {
-    const list = showFavorites ? favorites : characters;
-    return list.filter((char) =>
+  const list = showFavorites ? favorites : characters;
+
+    return list.filter((char: Character) =>
       char.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }, [showFavorites, favorites, characters, searchTerm]);
@@ -41,11 +43,11 @@ const Home = () => {
       />
       <MainContent show={showFavorites}>
         {showFavorites ? <Title>FAVORITES</Title> : null }
-        <SearchBar
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          resultsCount={displayedCharacters.length}
-        />
+      <SearchBar
+        value={searchTerm}
+        onChange={setSearchTerm}
+        resultsCount={displayedCharacters.length}
+      />
 
         {loading ? (
           <Loading />
@@ -55,8 +57,8 @@ const Home = () => {
           />
         ) : (
           <CardsContainer>
-            {displayedCharacters.map((char) => (
-              <CharacterCard key={char.id} character={char} />
+            {displayedCharacters.map((char: Character) => (
+            <CharacterCard key={char.id} character={char} />
             ))}
           </CardsContainer>
         )}

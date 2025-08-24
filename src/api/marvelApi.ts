@@ -90,7 +90,6 @@ export const getComicsByCharacterId = async (_id: number): Promise<Comic[]> => {
       thumbnail: `${comic.thumbnail.path}.${comic.thumbnail.extension}`,
     }));
   } catch {
-    console.warn("API Marvel no accesible, usando mockComics");
     return mockComics;
   }
 };

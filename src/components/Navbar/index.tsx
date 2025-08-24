@@ -1,5 +1,4 @@
-// Navbar.tsx
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Logo, Favorites, NavbarContainer } from "./Navbar.styled";
 import marvelLogo from "@/assets/icon/marvel_logo.svg";
 import heartFilled from "@/assets/icon/heart_filled.svg";
@@ -13,35 +12,46 @@ interface NavbarProps {
   isShowingFavorites?: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ 
+const Navbar = ({
   onToggleFavorites,
   onShowAll,
-  favoritesDisabled,
-  isShowingFavorites
-}) => {
+  favoritesDisabled = false,
+  isShowingFavorites = false,
+}: NavbarProps) => {
   const context = useContext(FavoriteCharactersContext);
   if (!context) {
-    throw new Error("Header must be used within FavoriteCharactersProvider");
+    throw new Error("Navbar must be used within FavoriteCharactersProvider");
   }
 
   const { favorites } = context; 
   const navigate = useNavigate();
 
+  const handleLogoClick = () => {
+    navigate("/");
+    onShowAll?.();
+  };
+
+  const handleFavoritesClick = () => {
+    if (!favoritesDisabled && !isShowingFavorites) {
+      onToggleFavorites?.();
+    }
+  };
+
   return (
     <NavbarContainer>
-      <Logo 
-        src={marvelLogo} 
-        alt="Marvel Logo" 
-        onClick={() => {
-          navigate("/");
-          onShowAll?.();
-        }} 
+      <Logo
+        src={marvelLogo}
+        alt="Marvel Logo"
+        role="button"
+        tabIndex={0}
+        onClick={handleLogoClick}
       />
       <Favorites
-        onClick={() => !favoritesDisabled && !isShowingFavorites && onToggleFavorites?.()}
+        as="button"
+        onClick={handleFavoritesClick}
         disabled={favoritesDisabled || isShowingFavorites}
       >
-        <img src={heartFilled} alt="Heart" />
+        <img src={heartFilled} alt="Favoritos" />
         <span>{favorites.length}</span>
       </Favorites>
     </NavbarContainer>
