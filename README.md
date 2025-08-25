@@ -137,3 +137,7 @@ src/
 ├─ pages/ # Vistas principales (Home, CharacterDetail)
 ├─ assets/ # Imágenes y logos
 ├─ test/ # Tests unitarios
+
+![Imagen proyecto Marvel - Home](/pantalla-marvel-1.png)
+
+![Imagen proyecto Marvel - Favorites](/pantalla-marvel-2.png)

@@ -27,8 +27,8 @@ export const mockComics: Comic[] = [
   { id: 105, year: 2010, title: 'Who is...? Adam Warlock infinity Comic #1', thumbnail: comic12 },
   { id: 106, year: 2012, title: 'Who is...? Adam Warlock infinity Comic #1', thumbnail: comic14 },
   { id: 107, year: 2014, title: 'Who is...? Adam Warlock infinity Comic #1', thumbnail: comic19 },
-  { id: 107, year: 2015, title: 'Who is...? Adam Warlock infinity Comic #1', thumbnail: comic20 },
-  { id: 107, year: 2015, title: 'Who is...? Adam Warlock infinity Comic #1', thumbnail: comic21 },
-  { id: 107, year: 2016, title: 'Who is...? Adam Warlock infinity Comic #1', thumbnail: comic25 },
-  { id: 107, year: 2016, title: 'Who is...? Adam Warlock infinity Comic #1', thumbnail: comic26 },
+  { id: 108, year: 2015, title: 'Who is...? Adam Warlock infinity Comic #1', thumbnail: comic20 },
+  { id: 109, year: 2015, title: 'Who is...? Adam Warlock infinity Comic #1', thumbnail: comic21 },
+  { id: 110, year: 2016, title: 'Who is...? Adam Warlock infinity Comic #1', thumbnail: comic25 },
+  { id: 111, year: 2016, title: 'Who is...? Adam Warlock infinity Comic #1', thumbnail: comic26 },
 ];
