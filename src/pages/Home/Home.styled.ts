@@ -30,12 +30,12 @@ const bounceUp = keyframes`
   100% { transform: translateY(0px);}
 `;
 
-export const MainContent = styled.div<{ show?: boolean }>`
+export const MainContent = styled.div<{ $show?: boolean }>`
   width: 90%;
   margin: 0 auto;
   padding: 2rem 0;
-  ${({ show }) =>
-    show
+  ${({ $show }) =>
+    $show
       ? css`
           animation: ${bounceDown} 0.6s ease forwards;
         `

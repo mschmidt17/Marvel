@@ -9,17 +9,27 @@ export const useFetchCharacters = (searchTerm: string = '') => {
   useEffect(() => {
     const fetchCharacters = async () => {
       setLoading(true);
-      const data = await getCharacters(50, searchTerm);
-      setAllCharacters(data);
-      setLoading(false);
+      try {
+        const data = await getCharacters(50, searchTerm);
+        // Filtramos solo personajes válidos con name
+        setAllCharacters(data.filter((char) => char && char.name));
+      } catch (err) {
+        console.error('Error al obtener personajes:', err);
+        setAllCharacters([]);
+      } finally {
+        setLoading(false);
+      }
     };
+
     fetchCharacters();
   }, [searchTerm]);
 
-  // Filtrado en tiempo real según el searchTerm
+  // Filtrado en tiempo real según searchTerm
   const characters = useMemo(
     () =>
-      allCharacters.filter((char) => char.name.toLowerCase().includes(searchTerm.toLowerCase())),
+      allCharacters.filter(
+        (char) => char.name && char.name.toLowerCase().includes(searchTerm.toLowerCase()),
+      ),
     [allCharacters, searchTerm],
   );
 

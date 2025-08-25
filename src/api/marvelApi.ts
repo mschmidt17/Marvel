@@ -39,16 +39,19 @@ export const getCharacters = async (limit = 50, searchTerm = ''): Promise<Charac
     const params: MarvelParams = { ts, apikey: PUBLIC_KEY, limit };
     if (searchTerm) params.nameStartsWith = searchTerm;
 
-    const response = await axios.get<{ data: { results: Character[] } }>(MARVEL_BASE_URL, {
+    const response = await axios.get<{ data?: { results?: Character[] } }>(MARVEL_BASE_URL, {
       params,
     });
-    return response.data.data.results;
-  } catch (err: unknown) {
-    if (axios.isAxiosError(err) && err.response?.status === 401) {
-      console.warn('API Marvel no accesible (401), usando datos mock');
+
+    // verificamos que response.data.data.results exista y sea array
+    if (response.data?.data?.results && Array.isArray(response.data.data.results)) {
+      return response.data.data.results;
     } else {
-      console.error('Error inesperado al llamar a Marvel API, usando datos mock', err);
+      console.warn('Respuesta inesperada de Marvel API, usando datos mock');
+      return mockCharacters;
     }
+  } catch (err: unknown) {
+    // console.error('Error inesperado al llamar a Marvel API, usando datos mock', err);
     return mockCharacters;
   }
 };
@@ -65,7 +68,7 @@ export const getCharacterById = async (id: number): Promise<Character | null> =>
     if (axios.isAxiosError(err) && err.response?.status === 401) {
       console.warn('API Marvel no accesible (401), usando datos mock');
     } else {
-      console.error('Error inesperado al llamar a Marvel API, usando datos mock', err);
+      // console.error('Error inesperado al llamar a Marvel API, usando datos mock', err);
     }
     return mockCharacters.find((c) => c.id === id) || null;
   }
