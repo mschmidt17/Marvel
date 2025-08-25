@@ -28,8 +28,8 @@ const Loading: React.FC<LoadingBarProps> = ({ duration = 2000 }) => {
   }, [duration]);
 
   return (
-    <Container>
-      <Progress style={{ width: `${progress}%` }} />
+    <Container data-testid="loading">
+      <Progress data-testid="progress" style={{ width: `${progress}%` }} />
     </Container>
   );
 };

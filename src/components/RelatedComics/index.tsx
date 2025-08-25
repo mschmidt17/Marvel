@@ -33,6 +33,7 @@ const RelatedComics = ({ comics }: RelatedComicsProps) => {
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseUp}
       className={isDragging ? "active" : ""}
+      data-testid="carousel"
     >
       {comics.map((comic) => (
         <ComicCardCWrapper key={comic.id}>

@@ -45,7 +45,7 @@ const Home = () => {
         isShowingFavorites={showFavorites}
       />
       <MainContent show={showFavorites}>
-        {showFavorites ? <Title>FAVORITES</Title> : null }
+        {showFavorites ? <Title data-testid="favorites-title">FAVORITES</Title> : null }
       <SearchBar
         value={searchTerm}
         onChange={setSearchTerm}

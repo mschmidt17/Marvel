@@ -81,6 +81,5 @@ export const ComicsContainer = styled.div`
   border-bottom: 5px solid transparent; 
   border-image: linear-gradient(to right, #EC1D24 24%, #D9D9D9 0) 1;
   animation: ${slideDown} 0.4s ease-out forwards;
-
 }
 `;
