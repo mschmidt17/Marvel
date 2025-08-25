@@ -1,33 +1,15 @@
-import { render, screen } from "@testing-library/react";
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import Loading from "../components/Loading";
-import { act } from "react";
+import { render, screen } from '@testing-library/react';
+import { describe, it } from 'vitest';
+import Loading from '../components/Loading';
 
-describe("Loading component", () => {
-  beforeEach(() => {
-    vi.useFakeTimers();
+describe('Loading component', () => {
+  it('renders the container', () => {
+    render(<Loading duration={1500} />);
+    expect(screen.getByTestId('loading')).toBeInTheDocument();
   });
 
-  afterEach(() => {
-    vi.useRealTimers();
-  });
-
-  it("renders progress initially at 0%", () => {
-    render(<Loading duration={1000} />);
-    
-    const progress = screen.getByTestId("progress");
-    expect(progress).toHaveStyle({ width: "0%" });
-  });
-
-  it("animates progress to 100%", () => {
-    render(<Loading duration={1000} />);
-    const progress = screen.getByTestId("progress");
-
-    // Avanzamos el tiempo simulando la duración completa
-    act(() => {
-      vi.advanceTimersByTime(1000);
-    });
-
-    expect(progress).toHaveStyle({ width: "97.6%" });
+  it('renders the progress bar', () => {
+    render(<Loading duration={1500} />);
+    expect(screen.getByTestId('progress')).toBeInTheDocument();
   });
 });
