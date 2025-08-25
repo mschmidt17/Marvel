@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       {/* Suspense muestra un fallback mientras las páginas se cargan */}
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<Loading loading={true} />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/character/:id" element={<CharacterDetail />} />
