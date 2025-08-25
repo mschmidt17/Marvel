@@ -26,7 +26,7 @@ const CharacterDetail = () => {
   const [character, setCharacter] = useState<Character | null>(null);
   const [loading, setLoading] = useState(true);
   const characterId = character?.id;
-  const { comics: relatedComics } = useFetchComics(characterId || 0);
+  const { comics: relatedComics } = useFetchComics(characterId ?? 0);
 
   const context = useContext(FavoriteCharactersContext);
   if (!context) {
