@@ -23,7 +23,6 @@ const Home = () => {
   }
   const { favorites } = context;
 
-  // Filtrar los personajes a mostrar según search y favoritos
   const displayedCharacters = useMemo(() => {
     const list = showFavorites ? favorites : characters;
 
@@ -43,6 +42,8 @@ const Home = () => {
         favoritesDisabled={favorites.length === 0}
         isShowingFavorites={showFavorites}
       />
+      <Loading loading={loading} duration={1000} />
+
       <MainContent $show={showFavorites}>
         {showFavorites && <Title data-testid="favorites-title">FAVORITES</Title>}
         <SearchBar
@@ -51,9 +52,7 @@ const Home = () => {
           resultsCount={displayedCharacters.length}
         />
 
-        {loading ? (
-          <Loading />
-        ) : displayedCharacters.length === 0 ? (
+        {displayedCharacters.length === 0 && !loading ? (
           <EmptyState message={'No characters found'} />
         ) : (
           <CardsContainer>

@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 const grow = keyframes`
   from {
@@ -12,14 +12,24 @@ const grow = keyframes`
 export const Container = styled.div`
   height: 4px;
   width: 100%;
-  background-color: rgba(255, 0, 0, 0.53);
   position: relative;
   margin-top: -4px; /* justo debajo del navbar */
   overflow: hidden;
+  z-index: 9999;
 `;
 
-export const Progress = styled.div<{ $duration: number }>`
-  height: 100%;
+export const Progress = styled.div<{ $duration: number; $loading: boolean }>`
+  height: ${({ $loading }) => ($loading ? '100%' : '0')};
+  width: ${({ $loading }) => ($loading ? '100%' : '0%')};
+  opacity: ${({ $loading }) => ($loading ? 1 : 0)};
   background-color: #ec1d24;
-  animation: ${grow} ${({ $duration }) => $duration}ms linear forwards;
+
+  transition: width ${({ $duration }) => $duration}ms ease-out, opacity 0.3s ease-out,
+    height 0.3s ease-out;
+
+  ${({ $loading, $duration }) =>
+    $loading &&
+    css`
+      animation: ${grow} ${$duration}ms ease-out forwards;
+    `}
 `;

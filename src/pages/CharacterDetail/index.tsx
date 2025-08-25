@@ -32,61 +32,67 @@ const CharacterDetail = () => {
   if (!context) {
     throw new Error('CharacterDetail must be used within FavoriteCharactersProvider');
   }
-  const { toggleFavorite, isFavorite } = context;
+  const { toggleFavorite, isFavorite, favorites } = context;
 
   useEffect(() => {
     if (id) {
       setLoading(true);
       getCharacterById(Number(id))
-        .then(setCharacter)
-        .finally(() => setLoading(false));
+        .then((char) => {
+          setTimeout(() => {
+            setCharacter(char);
+            setLoading(false);
+          }, 800);
+        })
+        .catch(() => setLoading(false));
     }
   }, [id]);
 
-  if (loading)
-    return (
-      <>
-        <Navbar />
-        <Loading duration={1500} />
-      </>
-    );
+  if (!loading && !character) {
+    return <p style={{ color: 'white' }}>Character not found.</p>;
+  }
 
-  if (!character) return <p style={{ color: 'white' }}>Character not found.</p>;
-
-  const favorite = isFavorite(character.id);
-  const { favorites } = context;
+  const favorite = character ? isFavorite(character.id) : false;
 
   return (
     <Wrapper>
-      <Navbar navigateToHome={true} favoritesDisabled={favorites.length > 0 ? false : true} />
-      <Divider />
-      <Content>
-        <CharacterImage
-          src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-          alt={character.name}
-        />
-        <div>
-          <Header>
-            <CharacterName>{character.name.toUpperCase()}</CharacterName>
-            <FavoriteIcon
-              src={favorite ? heartFilled : heartOutlined}
-              alt={favorite ? 'Favorito' : 'No favorito'}
-              onClick={() => toggleFavorite(character)}
-            />
-          </Header>
+      <Navbar navigateToHome={true} favoritesDisabled={favorites.length === 0} />
+      <Loading loading={loading} duration={1000} />
 
-          <Description>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </Description>
-        </div>
-      </Content>
-      <ComicsContainer>
-        <Title>COMICS</Title>
-        <RelatedComics comics={relatedComics} />
-      </ComicsContainer>
+      {!loading && character && (
+        <>
+          <Divider />
+          <Content>
+            <CharacterImage
+              src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+              alt={character.name}
+            />
+            <div>
+              <Header>
+                <CharacterName>{character.name.toUpperCase()}</CharacterName>
+                <FavoriteIcon
+                  src={favorite ? heartFilled : heartOutlined}
+                  alt={favorite ? 'Favorito' : 'No favorito'}
+                  onClick={() => toggleFavorite(character)}
+                />
+              </Header>
+
+              <Description>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur.
+              </Description>
+            </div>
+          </Content>
+
+          <ComicsContainer>
+            <Title>COMICS</Title>
+            <RelatedComics comics={relatedComics} />
+          </ComicsContainer>
+        </>
+      )}
     </Wrapper>
   );
 };

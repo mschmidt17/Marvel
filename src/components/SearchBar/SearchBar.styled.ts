@@ -29,6 +29,7 @@ export const Input = styled.input`
   &::placeholder {
     color: #b4b0b0ff;
     opacity: 1;
+    font-family: 'Roboto Condensed', sans-serif;
   }
 `;
 

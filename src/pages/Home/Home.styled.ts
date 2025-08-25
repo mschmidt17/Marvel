@@ -14,6 +14,14 @@ export const CardsContainer = styled.div`
   justify-content: flex-start;
   gap: 26px;
   margin-top: 2.5%;
+
+  @media (max-width: 500px) {
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  @media (max-width: 380px) {
+    justify-content: center;
+  }
 `;
 
 const bounceDown = keyframes`

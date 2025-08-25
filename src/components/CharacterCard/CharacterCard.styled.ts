@@ -8,6 +8,10 @@ export const Card = styled.div`
   overflow: hidden;
 
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+
+  @media (max-width: 400px) {
+    width: 160px;
+  }
 `;
 
 export const Thumbnail = styled.img`

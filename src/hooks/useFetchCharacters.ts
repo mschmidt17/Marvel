@@ -11,12 +11,13 @@ export const useFetchCharacters = (searchTerm: string = '') => {
       setLoading(true);
       try {
         const data = await getCharacters(50, searchTerm);
-        // Filtramos solo personajes válidos con name
-        setAllCharacters(data.filter((char) => char && char.name));
+        setTimeout(() => {
+          setAllCharacters(data.filter((char) => char && char.name));
+          setLoading(false);
+        }, 800);
       } catch (err) {
         console.error('Error al obtener personajes:', err);
         setAllCharacters([]);
-      } finally {
         setLoading(false);
       }
     };
@@ -24,7 +25,6 @@ export const useFetchCharacters = (searchTerm: string = '') => {
     fetchCharacters();
   }, [searchTerm]);
 
-  // Filtrado en tiempo real según searchTerm
   const characters = useMemo(
     () =>
       allCharacters.filter(
