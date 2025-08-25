@@ -33,6 +33,8 @@ export const Content = styled.div`
   justify-content: center;
   gap: 3%;
   animation: ${slideDown} 0.4s ease-out forwards;
+
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
 `;
 
 export const CharacterImage = styled.img`

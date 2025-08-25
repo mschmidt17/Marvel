@@ -1,4 +1,4 @@
-# 🦸 Frontend Developer Challenge - Marvel Characters
+# 🦸 Marvel Characters
 
 ## 📌 Introducción
 
@@ -60,22 +60,85 @@ La aplicación cuenta con dos vistas principales: listado de personajes y detall
 - Uso de mocks cuando la API no está disponible
 - Linters y formatters configurados (ESLint + Prettier)
 - Husky para pre-commits con convenciones:
-  - `feat`
-  - `fix`
-  - `chore`
-  - `refactor`
+  - `feat` – nueva funcionalidad
+  - `fix` – corrección de errores
+  - `chore` – tareas de mantenimiento o configuración
+  - `refactor` – refactorización de código sin cambios funcionales
 
 ---
 
-## 📂 Estructura del Proyecto
+## 🚀 Instalación y Ejecución
 
-```text
-src/
-├─ api/          # Servicios API (Marvel)
-├─ components/   # Componentes reutilizables
-├─ hooks/        # Hooks personalizados
-├─ store/        # Context API y estado global
-├─ pages/        # Vistas principales (Home, CharacterDetail)
-├─ assets/       # Imágenes y logos
-├─ test/         # Tests unitarios
+### 1️⃣ Clonar repositorio
+
+```bash
+git clone <URL-del-repositorio>
+cd <nombre-del-proyecto>
 ```
+
+2️⃣ Instalar dependencias
+npm install
+
+3️⃣ Configurar variables de entorno
+
+Crear un archivo .env en la raíz del proyecto con los valores:
+
+VITE_MARVEL_BASE_URL=https://gateway.marvel.com/v1/public/characters
+VITE_MARVEL_PUBLIC_KEY=<tu-public-key>
+
+Nota: aunque la API de Marvel no esté activa, la aplicación funciona con datos mock.
+
+4️⃣ Ejecutar en modo desarrollo
+npm run dev
+
+Sirve la aplicación en http://localhost:5173/.
+
+Assets sin minimizar para facilitar debugging.
+
+5️⃣ Ejecutar build para producción
+npm run build
+
+Genera la versión optimizada en dist/.
+
+Assets concatenados y minimizados.
+
+6️⃣ Ejecutar la aplicación en modo producción
+npm run preview
+
+Sirve el contenido de dist/ como en un servidor real.
+
+🧹 Convenciones de Commits (Husky)
+
+Se usan hooks pre-commit para validar mensajes de commit:
+
+feat: nueva funcionalidad
+
+fix: corrección de errores
+
+chore: tareas de mantenimiento o configuración
+
+refactor: refactorización de código sin cambios funcionales
+
+Ejemplo de commit válido:
+
+git commit -m "feat: agregar barra de búsqueda de personajes"
+
+✅ Testing
+
+Ejecutar todos los tests:
+
+npm run test
+
+Cobertura incluida.
+
+Se usan mocks para llamadas a la API cuando esta no responde.
+
+📂 Estructura del Proyecto
+src/
+├─ api/ 🗂️ Servicios API (Marvel)
+├─ components/ 🧩 Componentes reutilizables
+├─ hooks/ 🔗 Hooks personalizados
+├─ store/ 🏛️ Context API y estado global
+├─ pages/ 🖼️ Vistas principales (Home, CharacterDetail)
+├─ assets/ 🖼️ Imágenes y logos
+├─ test/ ✅ Tests unitarios

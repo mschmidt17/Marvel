@@ -6,6 +6,8 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
+
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 `;
 
 export const Thumbnail = styled.img`
