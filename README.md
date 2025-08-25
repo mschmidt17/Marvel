@@ -1,139 +1,81 @@
-🦸‍♂️ Marvel App
-🔹 Introducción
+# 🦸 Frontend Developer Challenge - Marvel Characters
 
-Esta prueba consiste en la creación de una pequeña aplicación para obtener información sobre personajes de Marvel.
-La app está desarrollada en React + TypeScript, usando Context API para el manejo de estado y Styled Components para los estilos.
+## 📌 Introducción
 
-🖥️ Vistas
+Esta prueba consiste en la creación de una pequeña aplicación para obtener información sobre diferentes personajes de Marvel.  
+La aplicación cuenta con dos vistas principales: listado de personajes y detalle de cada personaje.
 
-1️⃣ Vista principal - Listado de personajes
+---
 
-Muestra un listado de 50 personajes o el resultado de la búsqueda.
+## 🖥️ Vistas
 
-Barra de búsqueda para filtrar personajes por nombre (ej: "Spider").
+### 1️⃣ Vista Principal
 
-Icono de favoritos con contador.
+- Muestra un listado de 50 personajes o los resultados filtrados por el buscador.
+- Icono superior de favoritos que muestra los personajes favoritos.
+- Barra de búsqueda en tiempo real.
+- Contador con los resultados obtenidos.
+- Cada resultado muestra:
+  - Imagen del personaje
+  - Nombre
+  - Opción para añadir/eliminar favoritos
+- Al hacer clic en un personaje, se redirige a la vista de detalle.
 
-Al hacer clic en un personaje, se redirige a la vista de detalle.
+### 2️⃣ Vista Detalle de Personaje
 
-Posibilidad de marcar/desmarcar favoritos y persistirlos entre vistas.
+- Imagen, nombre y descripción del personaje.
+- Icono para añadir/eliminar de favoritos.
+- Listado de cómics en los que aparece (máx. 20), ordenados por fecha de salida.
+- Iconos de navegación a la página principal o lista de favoritos.
 
-Al hacer clic en el icono superior de favoritos, se filtran únicamente los personajes favoritos.
+---
 
-2️⃣ Vista de detalle de personaje
+## 🎨 Diseño
 
-Muestra imagen, nombre, descripción y cómics del personaje (máx. 20).
+- Responsive: móvil y escritorio.
+- Basado en los diseños de Figma.
+- Uso de Styled Components y variables CSS para consistencia visual.
 
-Icono de favoritos para marcar/desmarcar.
+---
 
-Navegación de vuelta a la vista principal mediante el logo de Marvel.
+## ⚙️ Stack Tecnológico
 
-Los cómics se muestran ordenados por fecha de salida.
+- **TypeScript**
+- **React ≥ 17**
+- **Node ≥ 18**
+- **Vite**
+- **Styled Components**
+- **Context API** para gestión de estado
+- **Axios** para llamadas a la API Marvel
+- **Jest + React Testing Library** para tests
 
-🎨 Diseño
+---
 
-La aplicación es responsive, siguiendo los diseños propuestos en Figma.
+## 🛠️ Funcionalidades
 
-Se utilizaron animaciones simples con keyframes en Styled Components.
+- Listado y filtrado de personajes
+- Favoritos persistentes entre vistas
+- Vista de detalle de personaje con cómics
+- Responsive y accesible
+- Uso de mocks cuando la API no está disponible
+- Linters y formatters configurados (ESLint + Prettier)
+- Husky para pre-commits con convenciones:
+  - `feat`
+  - `fix`
+  - `chore`
+  - `refactor`
 
-Todos los componentes fueron desarrollados desde cero (sin librerías tipo Material UI o AntD).
+---
 
-⚡ Stack
+## 📂 Estructura del Proyecto
 
-TypeScript
-
-React >=17
-
-Node >=18
-
-Styled Components
-
-Context API para manejo de estado
-
-Axios para consumo de API Marvel
-
-🔧 Modo de desarrollo y producción
-
-Desarrollo: assets sin minimizar, con hot-reload.
-
-Producción: assets concatenados y minimizados.
-
-💻 Comandos
-
-# Instalar dependencias
-
-npm install
-
-# Ejecutar en modo desarrollo
-
-npm run dev
-
-# Construir para producción
-
-npm run build
-
-# Ejecutar versión de producción local
-
-npm run serve
-
-# Ejecutar tests
-
-npm run test
-
-🧪 Testing
-
-Se implementaron tests unitarios con Vitest + Testing Library.
-
-Se validan renderizados, interacciones y lógica de favoritos.
-
-🧹 Linter y formateo
-
-ESLint con reglas para React y TypeScript.
-
-Prettier para formateo automático.
-
-La consola del navegador está limpia de errores y warnings.
-
-🔄 Pre-commit con Husky
-
-Se configuró Husky para asegurar que los commits sigan las convenciones:
-
-feat: nueva funcionalidad
-
-fix: corrección de bugs
-
-chore: tareas de mantenimiento
-
-refactor: refactorización de código
-
-🔧 Configuración
-
-# Instalar Husky
-
-npm install husky --save-dev
-
-# Inicializar Husky
-
-npx husky install
-
-# Crear pre-commit hook para correr lint
-
-npx husky add .husky/pre-commit "npm run lint"
-
-🌐 API Marvel
-
-URL base: http://gateway.marvel.com/v1/
-
-Documentación oficial: Marvel API
-
-Mock de datos utilizado para desarrollo cuando la API falla.
-
-🗂️ Estructura del proyecto
+```text
 src/
-├─ api/ # Servicios API
-├─ components/ # Componentes reutilizables
-├─ hooks/ # Hooks personalizados
-├─ store/ # Context API y estado global
-├─ pages/ # Vistas principales (Home, CharacterDetail)
-├─ assets/ # Imágenes y logos
-├─ test/ # Tests unitarios
+├─ api/          # Servicios API (Marvel)
+├─ components/   # Componentes reutilizables
+├─ hooks/        # Hooks personalizados
+├─ store/        # Context API y estado global
+├─ pages/        # Vistas principales (Home, CharacterDetail)
+├─ assets/       # Imágenes y logos
+├─ test/         # Tests unitarios
+```
