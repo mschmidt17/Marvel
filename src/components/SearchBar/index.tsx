@@ -1,6 +1,6 @@
-import type { ChangeEvent } from "react";
-import { Container, InputWrapper, Icon, Input, ResultsText } from "./SearchBar.styled";
-import searchIcon from "@/assets/icon/search.svg";
+import type { ChangeEvent } from 'react';
+import { Container, InputWrapper, Icon, Input, ResultsText } from './SearchBar.styled';
+import searchIcon from '@/assets/icon/search.svg';
 
 interface SearchBarProps {
   value: string;
@@ -14,7 +14,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange, resultsCount }) 
   const resultsLabel =
     resultsCount === undefined
       ? null
-      : `${resultsCount} ${resultsCount === 1 ? "RESULT" : "RESULTS"}`;
+      : `${resultsCount} ${resultsCount === 1 ? 'RESULT' : 'RESULTS'}`;
 
   return (
     <Container>

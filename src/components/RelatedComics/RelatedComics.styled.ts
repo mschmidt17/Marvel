@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ComicsCarrousel = styled.div`
   display: flex;
@@ -25,17 +25,17 @@ export const ComicsCarrousel = styled.div`
     -webkit-user-drag: none;
     width: 200px;
     height: 300px;
-    object-fit: cover; 
-    object-position: center; 
+    object-fit: cover;
+    object-position: center;
   }
 `;
 
 export const ComicCardCWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  flex-shrink: 0; 
-  width: 200px;  
-  cursor: grab; 
+  flex-shrink: 0;
+  width: 200px;
+  cursor: grab;
 `;
 
 export const ComicTitle = styled.p`
@@ -46,5 +46,5 @@ export const ComicTitle = styled.p`
 
 export const ComicYear = styled.p`
   margin: 0;
-  font-size: 12px; 
+  font-size: 12px;
 `;

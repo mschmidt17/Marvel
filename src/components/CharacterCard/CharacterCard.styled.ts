@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Card = styled.div`
   border: 1px solid #ccc;
@@ -24,38 +24,38 @@ export const Footer = styled.div`
   align-items: center;
   padding: 4px 18px;
   height: 60px;
-  overflow: hidden; 
+  overflow: hidden;
 `;
 
 export const RedDivider = styled.div`
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
   width: 100%;
-  height: 4px; 
-  background-color: #EC1D24;
+  height: 4px;
+  background-color: #ec1d24;
   transition: height 0.3s ease;
-  z-index: 0; 
+  z-index: 0;
 `;
 
 export const CharacterName = styled.span`
   font-size: 14px;
   color: #fff;
-  z-index: 1; 
+  z-index: 1;
 `;
 
 export const FavoriteIcon = styled.img`
   width: 15px;
   height: 15px;
   cursor: pointer;
-  z-index: 1; 
+  z-index: 1;
 `;
 
 export const CardWrapper = styled.div`
   &:hover ${Footer} ${RedDivider} {
-    height: 100%; 
+    height: 100%;
   }
   &:hover ${FavoriteIcon} {
     filter: brightness(0) invert(1);
-  }  
+  }
 `;

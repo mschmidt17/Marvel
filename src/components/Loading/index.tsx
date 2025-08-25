@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Container, Progress } from "./Loading.styled";
+import React, { useEffect, useState } from 'react';
+import { Container, Progress } from './Loading.styled';
 
 interface LoadingBarProps {
   duration?: number;
@@ -14,8 +14,10 @@ const Loading: React.FC<LoadingBarProps> = ({ duration = 2000 }) => {
 
     const animate = (timestamp: number) => {
       if (!start) start = timestamp;
+
       const elapsed = timestamp - start;
       const percentage = Math.min((elapsed / duration) * 100, 100);
+
       setProgress(percentage);
       if (percentage < 100) {
         animationFrame = requestAnimationFrame(animate);

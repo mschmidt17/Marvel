@@ -1,6 +1,6 @@
-import { useRef, useState } from "react";
-import type { Comic } from "../../api/mockComics";
-import { ComicCardCWrapper, ComicsCarrousel, ComicTitle, ComicYear } from "./RelatedComics.styled";
+import { useRef, useState } from 'react';
+import type { Comic } from '../../api/mockComics';
+import { ComicCardCWrapper, ComicsCarrousel, ComicTitle, ComicYear } from './RelatedComics.styled';
 
 type RelatedComicsProps = { comics: Comic[] };
 
@@ -32,7 +32,7 @@ const RelatedComics = ({ comics }: RelatedComicsProps) => {
       onMouseUp={onMouseUp}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseUp}
-      className={isDragging ? "active" : ""}
+      className={isDragging ? 'active' : ''}
       data-testid="carousel"
     >
       {comics.map((comic) => (

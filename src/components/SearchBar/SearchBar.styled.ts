@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -27,8 +27,8 @@ export const Input = styled.input`
   padding-bottom: 4px;
 
   &::placeholder {
-    color: #b4b0b0ff; 
-    opacity: 1; 
+    color: #b4b0b0ff;
+    opacity: 1;
   }
 `;
 

@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from "styled-components";
+import styled, { keyframes, css } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -12,8 +12,8 @@ export const CardsContainer = styled.div`
   align-items: center;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 26px;     
-  margin-top: 2.5%;         
+  gap: 26px;
+  margin-top: 2.5%;
 `;
 
 const bounceDown = keyframes`
@@ -31,8 +31,8 @@ const bounceUp = keyframes`
 `;
 
 export const MainContent = styled.div<{ show?: boolean }>`
-  width: 90%;           
-  margin: 0 auto;       
+  width: 90%;
+  margin: 0 auto;
   padding: 2rem 0;
   ${({ show }) =>
     show
@@ -41,8 +41,7 @@ export const MainContent = styled.div<{ show?: boolean }>`
         `
       : css`
           animation: ${bounceUp} 0.6s ease forwards;
-        `
-    } 
+        `}
 `;
 
 const slideDown = keyframes`

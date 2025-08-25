@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 const slideDown = keyframes`
   from {
@@ -28,12 +28,11 @@ export const Content = styled.div`
   background: black;
   color: white;
   display: flex;
-  align-items:center;
+  align-items: center;
   width: 100%;
-  justify-content:center;
+  justify-content: center;
   gap: 3%;
   animation: ${slideDown} 0.4s ease-out forwards;
-
 `;
 
 export const CharacterImage = styled.img`

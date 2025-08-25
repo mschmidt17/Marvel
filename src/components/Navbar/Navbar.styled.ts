@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const NavbarContainer = styled.header`
   width: 100%;
@@ -20,10 +20,10 @@ export const Favorites = styled.button<{ disabled?: boolean }>`
   align-items: center;
   color: #fff;
   font-size: 18px;
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
-  background: none;  
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  background: none;
   margin-right: 5%;
-  border:none;
+  border: none;
 
   & > img {
     margin-right: 8px;

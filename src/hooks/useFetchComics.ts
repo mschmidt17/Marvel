@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import type { Comic } from "../api/marvelApi";
-import { getComicsByCharacterId } from "../api/marvelApi";
+import { useState, useEffect } from 'react';
+import type { Comic } from '../api/marvelApi';
+import { getComicsByCharacterId } from '../api/marvelApi';
 
 export const useFetchComics = (characterId: number) => {
   const [comics, setComics] = useState<Comic[]>([]);
@@ -15,7 +15,7 @@ export const useFetchComics = (characterId: number) => {
         const data = await getComicsByCharacterId(characterId);
         setComics(data);
       } catch (error) {
-        console.error("Error al cargar comics", error);
+        console.error('Error al cargar comics', error);
         setComics([]);
       } finally {
         setLoading(false);

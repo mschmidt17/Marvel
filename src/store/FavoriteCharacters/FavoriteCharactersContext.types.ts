@@ -1,4 +1,4 @@
-import type { Character } from "../../api/marvelApi";
+import type { Character } from '../../api/marvelApi';
 
 export interface FavoriteCharactersContextProps {
   favorites: Character[];
