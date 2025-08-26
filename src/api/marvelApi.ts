@@ -33,13 +33,6 @@ interface MarvelParams {
 const MARVEL_BASE_URL = import.meta.env.VITE_MARVEL_BASE_URL;
 const PUBLIC_KEY = import.meta.env.VITE_MARVEL_PUBLIC_KEY;
 
-/**
- * Nota:
- * Los endpoints mantienen la misma estructura de la API oficial de Marvel.
- * Actualmente la data es mockeada debido a que no se dispone del `ts + apikey + hash`
- * necesarios para autenticar los requests contra la API real.
- */
-
 export const getCharacters = async (limit = 50, searchTerm = ''): Promise<Character[]> => {
   try {
     const ts = Date.now();
@@ -57,7 +50,6 @@ export const getCharacters = async (limit = 50, searchTerm = ''): Promise<Charac
       return mockCharacters;
     }
   } catch (err: unknown) {
-    // console.error('Error inesperado al llamar a Marvel API, usando datos mock', err);
     return mockCharacters;
   }
 };
@@ -80,11 +72,11 @@ export const getCharacterById = async (id: number): Promise<Character | null> =>
   }
 };
 
-export const getComicsByCharacterId = async (id: number): Promise<Comic[]> => {
+export const getComicsByCharacterId = async (_id: number): Promise<Comic[]> => {
   try {
     const ts = Date.now();
     const response = await axios.get<{ data: { results: MarvelComic[] } }>(
-      `${MARVEL_BASE_URL}/${id}/comics`,
+      `${MARVEL_BASE_URL}/${_id}/comics`,
       { params: { ts, apikey: PUBLIC_KEY } },
     );
 
