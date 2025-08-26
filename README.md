@@ -47,7 +47,7 @@ La aplicación cuenta con dos vistas principales: listado de personajes y detall
 - **Styled Components**
 - **Context API** para gestión de estado
 - **Axios** para llamadas a la API Marvel
-- **Jest + React Testing Library** para tests
+- **Vitest + React Testing Library** para tests
 
 ---
 
