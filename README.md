@@ -83,8 +83,8 @@ npm install
 
 Crear un archivo .env en la raíz del proyecto con los valores:
 
-VITE_MARVEL_BASE_URL=https://gateway.marvel.com/v1/public/characters
-VITE_MARVEL_PUBLIC_KEY=<tu-public-key>
+MARVEL_BASE_URL=https://gateway.marvel.com/v1/public/characters
+MARVEL_PUBLIC_KEY=<tu-public-key>
 
 Nota: aunque la API de Marvel no esté activa, la aplicación funciona con datos mock.
 
