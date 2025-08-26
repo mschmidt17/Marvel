@@ -66,12 +66,14 @@ export const CharacterName = styled.h1`
   flex: 1;
   font-size: 2rem;
   font-weight: bold;
+  ser-select: none;
 `;
 
 export const FavoriteIcon = styled.img`
   width: 28px;
   height: 28px;
   cursor: pointer;
+  ser-select: none;
 `;
 
 export const Description = styled.p`
