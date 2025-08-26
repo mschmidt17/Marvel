@@ -80,11 +80,11 @@ export const getCharacterById = async (id: number): Promise<Character | null> =>
   }
 };
 
-export const getComicsByCharacterId = async (_id: number): Promise<Comic[]> => {
+export const getComicsByCharacterId = async (id: number): Promise<Comic[]> => {
   try {
     const ts = Date.now();
     const response = await axios.get<{ data: { results: MarvelComic[] } }>(
-      `${MARVEL_BASE_URL}/${_id}/comics`,
+      `${MARVEL_BASE_URL}/${id}/comics`,
       { params: { ts, apikey: PUBLIC_KEY } },
     );
 
