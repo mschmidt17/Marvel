@@ -78,15 +78,16 @@ const CharacterDetail = () => {
               </Header>
 
               <Description>
-                Adam Warlock is an artificially created human who was born in a cocoon at a
-                scientific complex called The Beehive.
+                Created by the Enclave to be part of a race of super humans who would abolish war,
+                illness, and crime, Adam Warlock is a unique being who uses his immense and
+                formidable powers to safeguard the universe.
               </Description>
             </div>
           </Content>
 
           <ComicsContainer>
             <Title>COMICS</Title>
-            <RelatedComics comics={relatedComics} />
+            <RelatedComics comics={relatedComics ?? []} />
           </ComicsContainer>
         </>
       )}

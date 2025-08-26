@@ -56,7 +56,7 @@ const Navbar = ({
         onClick={handleFavoritesClick}
         disabled={favoritesDisabled || isShowingFavorites}
       >
-        <img src={heartFilled} alt="Favoritos" />
+        <img src={heartFilled} alt="Favorites" />
         <span>{favorites.length}</span>
       </Favorites>
     </NavbarContainer>

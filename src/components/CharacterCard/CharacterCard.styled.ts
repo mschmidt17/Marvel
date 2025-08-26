@@ -48,6 +48,7 @@ export const CharacterName = styled.span`
   font-size: 14px;
   color: #fff;
   z-index: 1;
+  user-select: none;
 `;
 
 export const FavoriteIcon = styled.img`
@@ -55,6 +56,7 @@ export const FavoriteIcon = styled.img`
   height: 15px;
   cursor: pointer;
   z-index: 1;
+  user-select: none;
 `;
 
 export const CardWrapper = styled.div`

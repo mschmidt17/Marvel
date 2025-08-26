@@ -33,6 +33,13 @@ interface MarvelParams {
 const MARVEL_BASE_URL = import.meta.env.VITE_MARVEL_BASE_URL;
 const PUBLIC_KEY = import.meta.env.VITE_MARVEL_PUBLIC_KEY;
 
+/**
+ * Nota:
+ * Los endpoints mantienen la misma estructura de la API oficial de Marvel.
+ * Actualmente la data es mockeada debido a que no se dispone del `ts + apikey + hash`
+ * necesarios para autenticar los requests contra la API real.
+ */
+
 export const getCharacters = async (limit = 50, searchTerm = ''): Promise<Character[]> => {
   try {
     const ts = Date.now();
@@ -43,7 +50,6 @@ export const getCharacters = async (limit = 50, searchTerm = ''): Promise<Charac
       params,
     });
 
-    // verificamos que response.data.data.results exista y sea array
     if (response.data?.data?.results && Array.isArray(response.data.data.results)) {
       return response.data.data.results;
     } else {

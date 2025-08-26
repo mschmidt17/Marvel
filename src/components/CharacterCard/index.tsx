@@ -49,7 +49,7 @@ const CharacterCard = ({ character }: Props) => {
         />
         <Footer>
           <RedDivider />
-          <CharacterName>{character.name?.toUpperCase() || 'SIN NOMBRE'}</CharacterName>
+          <CharacterName>{character.name?.toUpperCase() || 'UNKNOWN'}</CharacterName>
           <FavoriteIcon
             src={favorite ? heartFilled : heartOutlined}
             alt={favorite ? 'Favorito' : 'No favorito'}
