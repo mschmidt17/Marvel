@@ -133,12 +133,13 @@ Cobertura incluida.
 
 Se usan mocks para llamadas a la API cuando esta no responde.
 
-📂 Estructura del Proyecto
-src/
-├─ api/ 🗂️ Servicios API (Marvel)
-├─ components/ 🧩 Componentes reutilizables
-├─ hooks/ 🔗 Hooks personalizados
-├─ store/ 🏛️ Context API y estado global
-├─ pages/ 🖼️ Vistas principales (Home, CharacterDetail)
-├─ assets/ 🖼️ Imágenes y logos
-├─ test/ ✅ Tests unitarios
+📂 **Estructura del Proyecto**
+
+- `src/`
+  - `api/` 🗂️ Services API (Marvel)
+  - `components/` 🧩 Reusable components
+  - `hooks/` 🔗 Custom hooks
+  - `store/` 🏛️ Context API and global state
+  - `pages/` 🖼️ Main views (Home, CharacterDetail)
+  - `assets/` 🖼️ Images and logos
+  - `test/` ✅ Unit tests
