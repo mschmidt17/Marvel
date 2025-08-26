@@ -22,10 +22,10 @@ import RelatedComics from '../../components/RelatedComics';
 import { Title } from '../Home/Home.styled';
 
 const CharacterDetail = () => {
-  const { id } = useParams();
   const [character, setCharacter] = useState<Character | null>(null);
   const [loading, setLoading] = useState(true);
-  const characterId = character?.id;
+  const { id } = useParams();
+  const characterId = id ? Number(id) : undefined;
   const { comics: relatedComics } = useFetchComics(characterId);
 
   const context = useContext(FavoriteCharactersContext);
@@ -40,6 +40,7 @@ const CharacterDetail = () => {
       getCharacterById(Number(id))
         .then((char) => {
           setTimeout(() => {
+            //animacion loading
             setCharacter(char);
             setLoading(false);
           }, 800);
