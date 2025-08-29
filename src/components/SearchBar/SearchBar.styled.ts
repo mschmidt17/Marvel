@@ -25,6 +25,8 @@ export const Input = styled.input`
   flex: 1;
   font-size: 16px;
   padding-bottom: 4px;
+  background-color: #ffffff;
+  color: #0c0c0cff;
 
   &::placeholder {
     color: #b4b0b0ff;
